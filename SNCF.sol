@@ -7,7 +7,7 @@ contract Sncf {
     struct Voyageur {
         string Nom;
         string Prenom;
-        string RefTrain; //format de RefTrain : DEPARTARRIVEECLASSEVOITURENUMERO (exemple MARSEILLEPARIS1120)
+        string RefBillet; //format de RefTrain : DEPARTARRIVEECLASSEVOITURENUMERO (exemple MARSEILLEPARIS1120)
         address ClinsAddress;
 
     }
@@ -17,6 +17,7 @@ contract Sncf {
         string arrivee;
         uint retard;
         bool etat;
+        string RefCode;
     }
 
     Voyageur[] public billet;
@@ -29,7 +30,10 @@ contract Sncf {
         contractOwner = msg.sender;
     }
 
-    function getState() public {
+    function getState(string memory _RefCode) public returns(bool) {
+        Train memory getTrain;
+        getTrain.RefCode = _RefCode;
+
 
     }
 
@@ -37,16 +41,27 @@ contract Sncf {
         return billet.length;
     }
 
-    function addNewVoyageur(string memory _nom, string memory _prenom, string memory _RefTrain, address _ClinsAddress) public returns(bool success) {
+    function addNewVoyageur(string memory _nom, string memory _prenom, string memory _RefBillet, address _ClinsAddress) public returns(bool success) {
         Voyageur memory NewVoyageur;
         NewVoyageur.Nom = _nom;
         NewVoyageur.Prenom = _prenom;
-        NewVoyageur.RefTrain = _RefTrain;
+        NewVoyageur.RefBillet = _RefBillet;
         NewVoyageur.ClinsAddress = _ClinsAddress;
         billet.push(NewVoyageur);
         return true;
 
     }
+
+        function addNewTrain(string memory _depart, string memory _arrive, uint _retard, string memory RefCode) public returns(bool success) {
+        Train memory getTrain;
+        getTrain.depart = _depart;
+        getTrain.arrivee = _arrive;
+        getTrain.retard = _retard;
+        getTrain.RefCode = RefCode;
+        train.push(getTrain);
+
+    }
+
 
 
 
