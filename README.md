@@ -12,4 +12,4 @@ Step by step follow-up :
   Consumers are added with their First name, Last name, Ticket Reference and wallet address.
   
 2/ Creating a constructor with alll the train
-   Train are added with their departures, arrival station, we also put the potential delay time and the state (where 1 is arrival). By terms, sensors at all Station could certificate that train have arrived or not.
+   Train are added with their departures, arrival station, we also put the potential delay time, the state (where 1 is arrival) AND an unique train reference code. By terms, sensors at all Station could certificate that train have arrived or not.
