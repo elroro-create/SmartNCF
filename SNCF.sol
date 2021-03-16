@@ -12,7 +12,7 @@ contract Sncf {
 
     }
 
-    struct EtatTrain {
+    struct Train {
         string depart;
         string arrivee;
         uint retard;
@@ -20,6 +20,8 @@ contract Sncf {
     }
 
     Voyageur[] public billet;
+    Train[] public train;
+    
 
     mapping(address => Voyageur) private voyageur;
 
@@ -27,7 +29,9 @@ contract Sncf {
         contractOwner = msg.sender;
     }
 
-    function 
+    function getState() public {
+
+    }
 
     function getVoyageur() public returns (uint) {
         return billet.length;
