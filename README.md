@@ -13,3 +13,5 @@ Step by step follow-up :
   
 2/ Creating a constructor with alll the train
    Train are added with their departures, arrival station, we also put the potential delay time, the state (where 1 is arrival) AND an unique train reference code. By terms, sensors at all Station could certificate that train have arrived or not.
+   
+3/ Creating basic functions that allow administrators (sncf by terms) to get access to some basics data as where is which train etc.
